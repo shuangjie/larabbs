@@ -15,6 +15,11 @@ class User extends Authenticatable implements MustVerifyEmailContract
         'name', 'email', 'password','introduction','avatar',
     ];
 
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
     protected $hidden = [
         'password', 'remember_token',
     ];
